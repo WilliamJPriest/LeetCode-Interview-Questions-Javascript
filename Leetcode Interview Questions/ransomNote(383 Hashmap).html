@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script> 
+    function canConstruct(ransomNote,magazine){
+            const magazineChars = new Map()
+          
+            for( const char of magazine){
+                if(magazineChars.has(char)){
+                    magazineChars.set(char, magazineChars.get(char) + 1);
+                    console.log(magazineChars)
+                } else {
+                    magazineChars.set(char, 1);
+                    console.log(magazineChars)
+                }}
+
+                for (const char of ransomNote) {
+                    if (magazineChars.get(char)) {
+                     magazineChars.set(char, magazineChars.get(char) - 1);
+                     console.log(magazineChars)
+                    } else {
+                        return false;
+                    }
+                }
+
+                return true;
+                }
+                /* 
+                Credit: aramfilak (https://leetcode.com/aramfilak/): Time Complexity: O(n+m) Space Complexity: O(1)
+                Leetcode 383 Hashmap https://leetcode.com/problems/ransom-note/solutions/3360795/typescript-hashmap/?envType=study-plan-v2&envId=top-interview-150
+                
+                See if the magazine contains the same letters as the RansomNote, magazine can have more letters than RnasomNote.
+
+                hashmap example: {"l" => 1, "e"=> 1, "t"=> 3}
+                1. creates a magzine hashmap
+                2. adds every character in magazine to the hashmap by looping, if that letter already exists +1 else just set to 1
+                3. checks every character in RansomNote, if the hashmap has the character -1 from the value, and keep doing it. 
+                If you find a character that's not in the hashmap it's false otherwise true. You need to minus the value because you could have the letter twice
+
+                side note: 
+                magazineChars.set(char, magazineChars.get(char)! - 1) assets true in typescript
+
+                map types: function canConstruct(ransomNote: string, magazine: string): boolean {
+                const magazineChars: Map<string, number> = new Map<string, number>();
+
+                map resource: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+
+                
+                */
+
+        </script>
+    </head>
+    <body>
+        
+
+    </body>
+</html>
