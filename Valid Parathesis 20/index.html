@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script> 
+            function isValid(s) {
+                let stack = []
+                
+                const openToCloseHM = {
+                        "(": ")",
+                        "[": "]",
+                        "{": "}"
+                }
+                //create stack, typescript has bulit in one.
+
+                //assign  openning parathesis to closing, can work backwards too
+                
+                // check if length is an odd number. if it is, return false
+                // if there is an odd number, it means that at least one bracket is missing a pair
+                if (s.length % 2 === 1) return false
+                
+                // if the first element is a closing bracket, it doesn't matter what follows
+                // it will never have a pair
+                if (s[0] === "]" || s[0] === ")" || s[0] === "}") return false
+                
+                // same goes for last element, we are just dealing with opening bracket
+                if (s[s.length - 1] === "[" || s[s.length - 1] === "(" || s[s.length - 1] === "{") return false
+
+                //above check cases aren't needed
+                
+                
+                for(let i=0; i<s.length; i++) {
+                    if(s[i] === "[" || s[i] === "(" || s[i] === "{") {
+                        //open brackets are always first in the array
+                        stack.push(s[i])
+                        console.log(stack)
+                        console.log(i)
+                    }else if (openToCloseHM[stack.pop()] !== s[i]) {
+                        //pops the key that matches the value 'closing' and contunes the loop, if not return false
+                        return false
+                    }
+                    
+                }
+            
+
+                return stack.length === 0
+                //because if you pop the stack, it should be empty if true
+            };
+
+                /* 
+                Credit: Anika (https://leetcode.com/AnikaErceg/): Time Complexity: O(n+m) Space Complexity: O(1)
+                20. Valid Parentheses https://leetcode.com/problems/valid-parentheses/description/?envType=study-plan-v2&envId=top-interview-150
+                
+
+                
+                */
+
+        </script>
+    </head>
+    <body>
+        
+
+    </body>
+</html>
