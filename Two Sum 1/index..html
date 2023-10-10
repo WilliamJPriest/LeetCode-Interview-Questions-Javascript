@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script> 
+            function twoSum(nums,target) {
+                const numToIndex = {}; // Create a dictionary to store values and their indices
+            
+                for (let i = 0; i < nums.length; i++) {
+                const num = nums[i];
+                const complement = target - num; // Calculate the complement needed to reach the target
+            
+                if (numToIndex[complement] !== undefined) {
+                    return [numToIndex[complement], i]; // Return the indices of the two numbers
+                }
+            
+                numToIndex[num] = i; // Store the current number and its index in the dictionary
+                }
+            
+                return null;}
+
+                //my friend daniel helped me, I made my own verison but it didn't uses a hashmap.
+
+                // target - num[i] is 7, if seven exists in the hash get 
+                // that index and the other index{i} if it's not in the hash(undefined), add it for later
+
+                //
+                // my verison
+                // for(let i = 0; i < nums.length; i++){
+                //     for(let j= i +1;j < nums.length; j++){
+                //     console.log(i)
+                //     console.log(j)
+                //     if(nums[i] + nums[j] == target){
+                //         return [i, j]
+                //     }
+                //     }
+                // } also works but almost definately slower for large datasets
+
+        </script>
+    </head>
+    <body>
+        
+
+    </body>
+</html>
