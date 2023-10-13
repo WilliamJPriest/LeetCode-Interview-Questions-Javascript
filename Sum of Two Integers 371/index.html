@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script> 
+                var getSum = function(a, b) {
+                    while (b !== 0) {
+                        // Calculate sum without carry
+                        let sum = a ^ b;
+                        // Calculate carry
+                        let carry = (a & b) << 1;
+                        
+                        // Add sum and carry
+                        a = sum;
+                        b = carry;
+                        }
+                        
+                        return a;
+                };
+
+        </script>
+    </head>
+</html>

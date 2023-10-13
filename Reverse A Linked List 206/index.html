@@ -1,20 +1,34 @@
 <html>
     <head>
         <script> 
-                function reverseList(head) {
-                    // Special case...
+                function reverseList(head) {//recursive
+                    // Special case... if linked list is one or empty
                     if (head == null || head.next == null) return head;
                     // Create a new node to call the function recursively and we get the reverse linked list...
-                    var res = reverseList(head.next);
+                    var res = reverseList(head.next); //it's not null yet
                     // Set head node as head.next.next...
                     head.next.next = head;
                     //set head's next to be null...
                     head.next = null;
-                    return res;     // Return the reverse linked list...
+                    return res;     // Return the reverse linked list... res is a new different list
                 }
-
+                
+                // credit name:
                 //credit: https://leetcode.com/problems/reverse-linked-list/solutions/2458632/easy-0-ms-100-fully-explained-java-c-python-js-c-python3-recursive-iterative/
-
+                 
+                // iterative
+                // var reverseList = function(head) {
+                //     let [prev,current] = [null,head]
+                //     // let prev = null;
+                //     // let current = head;
+                //     while(current != null){
+                //         let future = current.next;
+                //         current.next = prev;
+                //         prev = current;
+                //         current = future
+                //     }
+                //     return prev;
+                // }; malikdinar
                 //
                     /**
                      * Definition for singly-linked list.
