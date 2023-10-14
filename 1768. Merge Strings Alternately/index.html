@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script> 
+                var mergeAlternately = function(word1, word2) {
+                    let i =  0 
+                    let res = ""
+                    while(i < Math.max(word1.length, word2.length)){
+                        if(word1[i]) res+=word1[i]
+                        if(word2[i]) res+=word2[i]
+
+                        i++
+                    }
+
+                    return res 
+                };
+                
+                /* 
+                Credit: useNavigate (https://leetcode.com/problems/merge-strings-alternately/solutions/3765883/beginner-friendly-javascript-solution-using-two-pointer-approach/?envType=study-plan-v2&envId=leetcode-75)
+                */
+
+        </script>
+    </head>
+</html>
