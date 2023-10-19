@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script> 
+                var guessNumber = function(n) {
+    let low = 0
+    high = n
+
+    while (low<=high) {
+
+        let mid = Math.floor(low +(high-low)/2)
+
+        let result = guess(mid)
+
+        if(result == 0){
+            return mid;
+        }
+
+        else if (result <0){
+            high = mid-1;
+        }
+
+        else{
+            low = mid+1;
+        }
+
+
+    }
+    return -1
+};
+                
+                /* 
+                Credit: ilmaSiddiqui22 (https://leetcode.com/problems/guess-number-higher-or-lower/solutions/3103631/javascript-solution-with-explanation-o-log-n/?envType=study-plan-v2&envId=leetcode-75)
+                */
+
+        </script>
+    </head>
+</html>
