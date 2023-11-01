@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var groupAnagrams = function(strs) {
+            let res = {};
+            
+            for (const s of strs) {
+                let count = Array(26).fill(0);
+                for (const c of s) {
+                    count[c.charCodeAt() - 'a'.charCodeAt(0)] += 1;
+                }
+                const key = count.join(',');
+                if (!res[key]) {
+                    res[key] = [];
+                }
+                res[key].push(s);
+            }
+            
+            return Object.values(res);
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
