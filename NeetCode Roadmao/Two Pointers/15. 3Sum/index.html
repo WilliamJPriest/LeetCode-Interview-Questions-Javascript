@@ -25,15 +25,50 @@
                     if(nums[i]+nums[j]+nums[k] ==0){
                         array.push([nums[i],nums[j],nums[k]])
                         
+                        
                     }
                 }
             }
         }
         return array
     };
-    //My Orginal sub optimal way inspired by twosum, have to minus because +'s miss it up
+    //My Orginal sub optimal way inspired by twosum, have to minus because +'s miss it up, enough to pass some test cases
 </script>
-<body>
+<!-- <script>
+    var threeSum = function(nums) {
+    let array =[]            
+    let left;
+    let right;
+    nums= nums.sort(function (a, b) {  return a - b;  })
+    for(let i = 0; i < nums.length;i++){  
+        if(i > 0 && nums[i] == nums[i-1] ){
+            continue
+            }
+
+            left = i+1
+            right = nums.length -1
+            while(left < right){
+                let threeSum = nums[i] + nums[left]+ nums[right]
+                if (threeSum > 0){
+                    right -= 1
+                }
+                if (threeSum < 0){
+                    left += 1
+                }
+                if(threeSum == 0){
+                    array.push([nums[i],nums[left],nums[right]])
+                    left += 1
+                        while (nums[left]==nums[left -1] && left <right ){
+                            left += 1
+                        }
+                }
+            }
+    }
+    return array
+};
+//Net code better solu
+</script>
+<body> -->
     
 </body>
 </html>
