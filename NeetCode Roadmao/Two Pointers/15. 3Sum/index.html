@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //     **
+    //  * @param {number[]} nums
+    //  * @return {number[][]}
+    //  */
+    var threeSum = function(nums) {
+        let array =[]
+        nums= nums.sort(function (a, b) {  return a - b;  })
+        for(let i = 0; i < nums.length;i++){  
+            if(i > 0 && nums[i] == nums[i-1] ){
+                continue
+                }
+            for(let j = i+1; j <nums.length; j++){
+            
+                for(let k = j+1; k< nums.length; k++){
+                    if(nums[i]+nums[j]+nums[k] ==0){
+                        array.push([nums[i],nums[j],nums[k]])
+                        
+                    }
+                }
+            }
+        }
+        return array
+    };
+    //My Orginal sub optimal way inspired by twosum, have to minus because +'s miss it up
+</script>
+<body>
+    
+</body>
+</html>
