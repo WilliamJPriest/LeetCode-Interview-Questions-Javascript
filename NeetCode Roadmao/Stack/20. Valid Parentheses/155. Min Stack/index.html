@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var MinStack = function() {
+  this.elements = [];
+};
+
+/**
+
+ @param {number} x
+ @return {void}
+ */
+MinStack.prototype.push = function(x) {
+  this.elements.push({
+    value: x,
+    min: this.elements.length === 0 ? x : Math.min(x, this.getMin()),
+  });
+};
+/**
+
+ @return {void}
+ */
+MinStack.prototype.pop = function() {
+  this.elements.pop();
+};
+/**
+
+ @return {number}
+ */
+MinStack.prototype.top = function() {
+  return this.elements[this.elements.length - 1].value;
+};
+/**
+
+ @return {number}
+ */
+MinStack.prototype.getMin = function() {
+  return this.elements[this.elements.length - 1].min;
+};
+</script>
+<!-- <script>
+    class MinStack {
+  constructor() {
+    this.stack = [];
+    this.minStack = [];
+  }
+
+  push(val) {
+    this.stack.push(val);
+
+    if (this.minStack.length === 0 || val <= this.minStack[this.minStack.length - 1]) {
+      this.minStack.push(val);
+    }
+  }
+
+  pop() {
+    const poppedElement = this.stack.pop();
+
+    if (poppedElement === this.minStack[this.minStack.length - 1]) {
+      this.minStack.pop();
+    }
+  }
+
+  top() {
+    return this.stack[this.stack.length - 1];
+  }
+
+  getMin() {
+    return this.minStack[this.minStack.length - 1];
+  }
+}
+</script> -->
+<body>
+    
+</body>
+</html>
