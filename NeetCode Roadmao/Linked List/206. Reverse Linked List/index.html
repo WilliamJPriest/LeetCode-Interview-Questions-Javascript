@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reverseList(head){
+            if(head == null || head.next == null) return head
+
+            var res = reverseList(head.next)
+            //example[1,2]
+            head.next.next = head
+            // points pointer back to one
+            head.next = null
+            // points pointer to zero
+            
+            
+            return res
+        }
+    </script>
+    
+</body>
+</html>
