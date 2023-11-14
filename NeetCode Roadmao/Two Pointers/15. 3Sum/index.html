@@ -13,7 +13,8 @@
     //  */
     var threeSum = function(nums) {
         let array =[]
-        nums= nums.sort()
+       
+        nums.sort((a, b) => a - b)
         //function (a, b) {  return a - b;  } not needed, sort works with nums
         for(let i = 0; i < nums.length;i++){  
             if(i > 0 && nums[i] == nums[i-1] ){
@@ -37,16 +38,14 @@
 <!-- <script>
     var threeSum = function(nums) {
     let array =[]            
-    let left;
-    let right;
-    nums= nums.sort(function (a, b) {  return a - b;  })
+    nums.sort((a, b) => a - b)
     for(let i = 0; i < nums.length;i++){  
         if(i > 0 && nums[i] == nums[i-1] ){
             continue
             }
 
-            left = i+1
-            right = nums.length -1
+            let left = i+1
+            let right = nums.length -1
             while(left < right){
                 let threeSum = nums[i] + nums[left]+ nums[right]
                 if (threeSum > 0){
